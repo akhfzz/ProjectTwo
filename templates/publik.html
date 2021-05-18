@@ -1,0 +1,40 @@
+{% extends "UIApk.html" %}
+{% block title%}Public{% endblock %}
+{% block content %}
+<div class="container">
+	{% for e in ebook %}
+	<div class="row kotakPublik" id="content">
+		<div class="t-info">
+			<h2> {{ e[1] }}</h4>
+			<small>{{ e[0] }}</small>
+		</div>
+		<div class="e-info">
+			<h5>E-Book : {{ e[2] }}</h5>
+			<h5>Type : {{ e[3] }}</h5>
+			<h5>Publication : {{ e[4] }}</h5>
+			<h5>File :  <a href="/uploads/{{ e[5] }}">{{ e[5] }}</a></h5>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+<!-- <script type="text/javascript">
+	function searchStr(ele, str, search, originalStr){
+		if(search.length > 0){
+			let regex = new RegExp(search, 'g');
+			newString = str.replace(regex, " <span class='highlight'> "+ search + " </span> ")
+			ele.innerHTML = newString;
+		}else{
+			ele.innerHTML = originalStr;
+		}
+	}
+	var content = document.getElementById('content');
+	var searchInput = document.getElementById('searchInput');
+	var searchBtn = document.getElementById('searchBtn');
+
+	let originalContent = content.innerText;
+
+	searchBtn.addEventListener('click', function(){
+		searchStr(content, content.innerText, searchInput.value, originalContent)
+	});
+</script> -->
+{% endblock %}

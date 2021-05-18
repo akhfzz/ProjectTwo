@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} Login {% endblock %}
+{% block content %}
+<div class="boxForm">
+	<div class="boxLogin">
+		<h2 class="sapaUser">Login Sekarang!</h2>
+		<form action="{{ url_for('formLogin') }}" method="POST">
+			<div class="form-group">
+				<label for="inputUserName">Username</label>
+				<input type="text" name="namaUser" id="inputUserName" class="form-control" placeholder="Enter username"  maxlength="20">
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Password</label>
+				<input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+			</div><br>
+			<button type="submit" class="btn-register">Submit</button>
+		</form>	
+	</div>
+</div>
+{% endblock %}
+

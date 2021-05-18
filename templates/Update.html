@@ -1,0 +1,40 @@
+<DOCTYPE HTML>
+<html>
+<head>
+	<title>Update-ShareEBook</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="{{ url_for('static', filename='js/ajaxFile.js') }}"></script>
+  	<script type="text/javascript" src="{{ url_for('static', filename='js/ajaxFiles.js') }}"></script>
+  	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+	<script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/file.js')}}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/checkForm.js')}}"></script>
+</head>
+<body>
+	{% include "flash.html" %}
+	<form action="{{ url_for('update') }}" method="POST" enctype = "multipart/form-data">
+		<div class="form-group">
+			<label for="formGroupExampleInput">Themes</label>
+			<input type="text" name='judul' class="form-control" id="formGroupExampleInput" placeholder="Input your title EBook" value="{{ data[2]}}">
+		</div><br>
+		<div class="form-group">
+			<label for="formGroupExampleInput2">Publication</label>
+			<input type="text" name='tahun' class="form-control" id="formGroupExampleInput2" placeholder="Years your book was published" value="{{ data[4] }}">
+		</div><br>
+		<div class="form-group">
+			<label for="formGroupExampleInput2">Type EBook</label>
+			<input type="text" name='type' class="form-control" id="formGroupExampleInput2" placeholder="What's type your book(jurnal etc)" value="{{ data[3] }}">
+		</div><br>
+		<div class="mb-3">
+			  <label for="formFile" class="form-label">File</label>
+			  <input class="form-control" type="file" id="formFile" name="file" value="{{ data[5] }}">
+		</div><br>
+		<button type="submit" class="btn-register">Update</button>
+	</form>
+</body>
+</html>

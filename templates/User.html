@@ -1,0 +1,62 @@
+{% extends "UIApk.html" %}
+{% block title%}Profile{% endblock %}
+{% block content %}
+<div class="container" id="tengah">
+	<div class="row" id="baris">
+		<div class="col-sm-5 col-md-6" id="column">
+			<h4>Welcome to my apps, {{ username }}</h4>
+			<table cellspacing="0" cellpadding="2" id="dataEbook">
+				<thead>
+					<tr>
+						<th colspan="4">Table EBook Yourself <button type="button" id="click" style="float: right;">Hide/show</button></th>
+					</tr>
+				</thead>
+				<tbody id="target">
+					<tr>
+						<th>Themes</th>
+						<th>Files</th>
+						<th>Delete/Update</th>
+					</tr>
+					{% if iduser %}
+					{% for i in check %}
+					<tr>
+						<td>{{ i[1] }}</td>
+						<td><a href="/uploads/{{ filename }}">{{ i[4] }}</a></td>
+						<td>
+							<form action="{{ url_for('delete') }}" method='POST'>
+								<button type='submit' class="btn-delete">Delete</button>
+								<button type="button" class="btn-update" onclick="myAjax()">Update</button>
+							</form>
+						</td>
+					<tr>
+					{% endfor %}
+					{% endif %}
+				</tbody>
+			</table>
+		</div>
+		<script type="text/javascript" src="{{ url_for('static', filename='js/hide.js') }}"></script>
+		<div class="col-sm-5 col-md-6" id="demo">
+			{% include "flash.html" %}
+			<form action="{{ url_for('index') }}" method="POST" enctype = "multipart/form-data">
+				<div class="form-group">
+					<label for="formGroupExampleInput">Themes</label>
+					<input type="text" name='judul' class="form-control" id="formGroupExampleInput" placeholder="Input your title EBook">
+				</div><br>
+				<div class="form-group">
+					<label for="formGroupExampleInput2">Publication</label>
+					<input type="text" name='tahun' class="form-control" id="formGroupExampleInput2" placeholder="Years your book was published">
+				</div><br>
+				<div class="form-group">
+					<label for="formGroupExampleInput2">Type EBook</label>
+					<input type="text" name='type' class="form-control" id="formGroupExampleInput2" placeholder="What's type your book(jurnal etc)">
+				</div><br>
+				<div class="mb-3">
+					  <label for="formFile" class="form-label">File</label>
+					  <input class="form-control" type="file" id="formFile" name="file">
+				</div><br>
+				<button type="submit" class="btn-register">Upload</button>
+			</form>
+		</div>
+	</div>	
+</div>
+{% endblock %}

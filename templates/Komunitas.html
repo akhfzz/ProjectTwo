@@ -1,0 +1,47 @@
+{% extends "UIApk.html" %}
+{% block title %}Community{% endblock %}
+{% block content %}
+	<div class="container">
+		{% include "flash.html" %}
+		<div class="row">
+			<div class="col-sm-4 col-md-4 side" id="batas">
+				<h4>Join with Community</h4>
+				<form method="POST" action="{{ url_for('joinCommunity') }}">
+					<div class="form-group">
+						<label id="namaKomunitas">Community's name</label>
+						<input type="text" name="namaKomunitas" id="namaKomunitas" class="form-control" placeholder="Get Your coummity needs">
+					</div>
+					<button type="submit" class="btn btn-secondary">Join</button>
+				</form>
+			</div>
+			<div class="col-sm-6 col-md-8 side">
+				<h4>Add a community</h4>
+				<form method="POST" action="{{ url_for('community') }}">
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="namaKomunitas">Community's name</label>
+							<input type="text" name="namaKomunitas" class="form-control" id="namaKomunitas" placeholder="Add your community">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="urlKomunitas">URL's community</label>
+							<input type="text" name="urlKomunitas" class="form-control" id="urlKomunitas" placeholder="URL group" class="form-control">
+						</div>
+					</div>
+					<button class="btn btn-primary" type="submit">Save</button> 
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="alert alert-dark" role="alert">
+  			Please complete the join form above to calculate the number of members
+		</div>
+		{% for k in all %}
+		<div class="row kotakPublik">
+			<h3 class="t-info">{{ k[0] }}</h3>
+			<small class="jum">Count Members : {{ k[2] }}</small>
+			<a href="{{ k[1] }}" target="_blank" class="e-info">Link Join</a>
+		</div>
+		{% endfor %}
+	</div>
+{% endblock %}

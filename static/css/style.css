@@ -1,0 +1,196 @@
+body{
+	margin: 0
+}
+.boxForm{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.boxForm-child{
+	margin-top: 80px;
+	margin-bottom: 80px;
+	flex-basis: 500px;
+	border: 1px solid blue;
+	background-color: hsl(175, 97%, 96%);
+	box-shadow: 10px 6px black;
+	color: black;
+	padding: 40px;
+}
+.boxLogin{
+	margin-top: 80px;
+	margin-bottom: 80px;
+	flex-basis: 500px;
+	border: 1px solid blue;
+	background-color: hsl(251, 97%, 61%);
+	box-shadow: 10px 6px black;
+	color: black;
+	padding: 40px;
+}
+input[type=text]:hover{
+	background-color: hsl(221, 97%, 61%);
+	color: white;
+}
+input[type=email]:hover{
+	background-color: hsl(221, 97%, 61%);
+	color: white;
+}
+input[type=password]:hover{
+	background-color: hsl(221, 97%, 61%);
+	color: white;
+}
+.sapaUser{
+	text-align: center;
+}
+button a{
+	text-decoration: none
+}
+.actived{
+	color: red;
+}
+.side{
+	height: 400px;
+	padding-top: 30px;
+}
+.right-left{
+	margin-right: 20px;
+	margin-left: 5px
+}
+.flashes{
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+}
+.btn-register{
+	background-color: red;
+	width: 100%;
+	border-radius: 15px;
+	padding: 10px;
+	color: white;
+}
+#dataEbook {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#dataEbook td, #dataEbook th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#dataEbook tr:nth-child(even){background-color: #f2f2f2;}
+
+#dataEbook tr:hover {background-color: #ddd;}
+
+#dataEbook th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}
+.btn-delete{
+	background-color: red;
+	width: 45%;
+	border-radius: 15px;
+	padding: 10px;
+	color: white;
+	font-size: 9px;
+}
+.btn-delete:hover{
+	color: black;
+}
+.kotakPublik{
+	border-top: 1px solid black;
+	padding: 10px;
+	box-shadow: 0px 0px 5px 0px black;
+	margin-bottom: 9px;
+}
+.e-info{
+	margin-left: 13px;
+	font-family: 'Arial Times New Romance'
+}
+#batas{
+	border-right: 1px solid #f0f8ff
+}
+.t-info{
+	margin: 13px;
+	font-family: 'Arial Times New Romance'
+}
+.jum{
+	text-align: right;
+}
+.btn-update{
+	background-color: green;
+	width: 45%;
+	border-radius: 15px;
+	padding: 10px;
+	color: white;
+	font-size: 9px;
+}
+.btn-update:hover{
+	color: black
+}
+.highlight{
+	color: white;
+	background-color: black;
+}
+.searches{
+	width: 50px;
+	float: right;
+}
+.navbar ul li.active{
+    color: white;
+}
+.foot{
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	background-color: black;
+	color: white;
+	padding: 5px;
+}
+.btn-login{
+	background-color: green;
+	width: 100%;
+	border-radius: 15px;
+	padding: 10px;
+	color: white;
+	margin-bottom: 20px;
+}
+.btn-register:hover{
+	background-color: blue;
+	color: white;
+}
+.btn-login:hover{
+	background-color: black;
+	color: white;
+}
+@media only screen and (max-width: 573px){
+	.boxForm-child{
+		margin-top: 40px;
+		margin-bottom: 40px;
+		flex-basis: 300px;
+		padding: 28px; 
+	}
+	.boxLogin{
+		margin-top: 40px;
+		margin-bottom: 40px;
+		flex-basis: 300px;
+		padding: 28px; 
+	}
+	.btn-register{
+		padding: 5px;
+	}
+	.btn-login{
+		padding: 5px;
+		margin-bottom: 10px;
+	}
+	.btn-delete{
+		font-size: 8px;
+	}
+	.btn-update{
+		font-size: 8px;
+	}
+}
